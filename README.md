@@ -6,7 +6,7 @@
 
 ## Links and Resources
 
-* TODO
+* [Repo](https://github.com/hfoley2013/snakes-cafe)
 
 ## Setup
 
