@@ -67,16 +67,25 @@ def data_validation():
 
 def take_order():
     data_validation()
-    user_order = {}
+    global user_order
+    user_order = []
     print(dedent("""
     ***********************************
     ** What would you like to order? **
     ***********************************
     """))
     ask_for_order = True
-    while ask_for_order is True:
-        order = input("> ")
-        if menu_validation
+    while ask_for_order:
+        order = input(dedent("> ")).lower()
+        if order == "quit":
+            ask_for_order = False
+            break
+        if order in menu_validation:
+            user_order.append(order)
+            num_order = user_order.count(order)
+            print(dedent(f"** {num_order} orders of {order} have been added to your meal **" if num_order > 1 else f"** {num_order} order of {order} have been added to your meal **"))
+        else:
+            print(dedent("That item is not on the menu. Please select another item."))
 
 intro_message()
 show_menu()
